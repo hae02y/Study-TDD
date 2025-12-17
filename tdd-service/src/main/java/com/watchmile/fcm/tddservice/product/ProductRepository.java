@@ -1,8 +1,11 @@
 package com.watchmile.fcm.tddservice.product;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Repository
 class ProductRepository {
     private long sequence = 0L;
     private final Map<Long, Product> persistence = new HashMap<>();

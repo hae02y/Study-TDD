@@ -1,13 +1,15 @@
 package com.watchmile.fcm.tddservice.product;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-class ProductAdapter implements ProductPort {
+@Primary
+class ProductAdapter2 implements ProductPort {
 
     private final ProductRepository productRepository;
 
-    ProductAdapter(ProductRepository productRepository) {
+    ProductAdapter2(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 

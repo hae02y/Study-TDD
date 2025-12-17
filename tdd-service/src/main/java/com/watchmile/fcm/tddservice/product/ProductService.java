@@ -1,11 +1,13 @@
 package com.watchmile.fcm.tddservice.product;
 
+import org.springframework.stereotype.Component;
+
+@Component
 record ProductService(ProductPort productPort) {
 
-    void addProduct(final AddProductRequest request) {
+    public void addProduct(final AddProductRequest request) {
 
         Product product = new Product(request.name(), request.price(), request.discountPolicy());
-
         productPort.save(product);
     }
 
