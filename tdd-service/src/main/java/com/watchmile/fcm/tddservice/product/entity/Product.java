@@ -1,13 +1,26 @@
-package com.watchmile.fcm.tddservice.product;
+package com.watchmile.fcm.tddservice.product.entity;
 
+import com.watchmile.fcm.tddservice.product.DiscountPolicy;
+import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.util.Assert;
 
-class Product {
+@Getter
+@Entity
+@Table(name = "products")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class Product {
 
-    private final String name;
-    private final long price;
-    private final DiscountPolicy discountPolicy;
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+    private long price;
+    private DiscountPolicy discountPolicy;
+
 
     public Product(String name, long price, DiscountPolicy discountPolicy) {
         Assert.hasText(name, "상품명은 필수입니다.");
@@ -17,18 +30,6 @@ class Product {
         this.name = name;
         this.price = price;
         this.discountPolicy = discountPolicy;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public long getPrice() {
-        return price;
-    }
-
-    public DiscountPolicy getDiscountPolicy() {
-        return discountPolicy;
     }
 
     public void assignId(long id) {

@@ -1,19 +1,20 @@
 package com.watchmile.fcm.tddservice.product;
 
-import org.springframework.context.annotation.Primary;
+import com.watchmile.fcm.tddservice.product.entity.Product;
+import com.watchmile.fcm.tddservice.product.repository.ProductMemoryRepository;
 import org.springframework.stereotype.Component;
 
 @Component
 class ProductAdapter2 implements ProductPort {
 
-    private final ProductRepository productRepository;
+    private final ProductMemoryRepository productMemoryRepository;
 
-    ProductAdapter2(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    ProductAdapter2(ProductMemoryRepository productMemoryRepository) {
+        this.productMemoryRepository = productMemoryRepository;
     }
 
     @Override
     public void save(Product product) {
-        productRepository.save(product);
+        productMemoryRepository.save(product);
     }
 }

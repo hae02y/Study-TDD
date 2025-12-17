@@ -1,5 +1,5 @@
 package com.watchmile.fcm.tddservice.product;
 
-enum DiscountPolicy {
+public enum DiscountPolicy {
     NONE
 }

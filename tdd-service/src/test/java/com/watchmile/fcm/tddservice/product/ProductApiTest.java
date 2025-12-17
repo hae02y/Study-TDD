@@ -15,7 +15,6 @@ public class ProductApiTest extends ApiTest{
 
     @Test
     void 상품등록() {
-
         var request = 상품등록요청생성();
         var response = 상품등록요청(request);
         assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
