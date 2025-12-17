@@ -11,7 +11,6 @@ public class ProductMemoryRepository {
     private long sequence = 0L;
     private final Map<Long, Product> persistence = new HashMap<>();
 
-
     public void save(Product product) {
         product.assignId(++sequence);
         persistence.put(product.getId(), product);

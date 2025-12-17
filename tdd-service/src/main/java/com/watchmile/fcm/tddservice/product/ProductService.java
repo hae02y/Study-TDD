@@ -19,9 +19,9 @@ record ProductService(ProductPort productPort) {
 
 
     @GetMapping
-    public GetProductResponse getProduct(@RequestParam long productId) {
+    public ResponseEntity<GetProductResponse> getProduct(@RequestParam long productId) {
         Product product = productPort.get(productId);
         if(product == null) return null;
-        return new GetProductResponse(product.getId(), product.getName(), product.getPrice(), product.getDiscountPolicy());
+        return new ResponseEntity<>(new GetProductResponse(product.getId(), product.getName(), product.getPrice(), product.getDiscountPolicy()), HttpStatus.OK);
     }
 }
