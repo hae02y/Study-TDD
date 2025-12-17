@@ -1,0 +1,15 @@
+package com.watchmile.fcm.tddservice.product;
+
+import java.util.HashMap;
+import java.util.Map;
+
+class ProductRepository {
+    private long sequence = 0L;
+    private final Map<Long, Product> persistence = new HashMap<>();
+
+
+    public void save(Product product) {
+        product.assignId(++sequence);
+        persistence.put(product.getId(), product);
+    }
+}
