@@ -1,6 +1,5 @@
-package com.watchmile.fcm.tddservice.product;
+package com.watchmile.fcm.tddservice;
 
-import com.watchmile.fcm.tddservice.DatabaseCleanup;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;

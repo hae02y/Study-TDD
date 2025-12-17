@@ -17,4 +17,9 @@ class ProductAdapter2 implements ProductPort {
     public void save(Product product) {
         productMemoryRepository.save(product);
     }
+
+    @Override
+    public Product get(long id) {
+        return null;
+    }
 }
