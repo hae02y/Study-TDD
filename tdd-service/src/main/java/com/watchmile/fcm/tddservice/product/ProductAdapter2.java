@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
 class ProductAdapter2 implements ProductPort {
 
     private final ProductRepository productRepository;
